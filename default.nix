@@ -7,11 +7,8 @@ let
       paths = buildInputs;
     };
     buildInputs = [
-      glib
       bashInteractive
       nodejs-14_x
       yarn
-      vips
-     pkg-config
     ];
 }
