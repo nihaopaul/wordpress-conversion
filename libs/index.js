@@ -12,6 +12,7 @@ module.exports = ({ rss }) => {
   const authors = require("./authors")(data);
   const categories = require("./categories")(data);
   const tags = require("./tags")(data);
+  const term = require("./terms")(data);
 
   return {
     title,
@@ -25,5 +26,6 @@ module.exports = ({ rss }) => {
     authors,
     categories,
     tags,
+    term,
   };
 };

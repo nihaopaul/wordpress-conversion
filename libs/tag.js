@@ -1,12 +1,18 @@
 const assert = require("assert").strict;
 module.exports = class Tag {
   #tag = {};
-  constructor({ "wp:term_id": id, "wp:tag_slug": slug, "wp:tag_name": name }) {
+  constructor({
+    "wp:term_id": id,
+    "wp:tag_slug": slug,
+    "wp:tag_name": name,
+    ...args
+  }) {
     this.#tag = {
       id,
       slug,
       name,
     };
+    assert.deepStrictEqual(args, {}, "Should not be any remaining objects");
   }
 
   get id() {
@@ -21,6 +27,7 @@ module.exports = class Tag {
     return decodeURI(this.#tag.slug._cdata);
   }
   get name() {
+    assert(this.#tag.name._cdata, "No name field");
     return this.#tag.name._cdata;
   }
 };

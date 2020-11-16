@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "convert XMl to JSON",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=14.0.0"
   },
   "main": "index.js",
   "license": "MIT",

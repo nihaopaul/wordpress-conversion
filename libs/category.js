@@ -7,6 +7,7 @@ module.exports = class Category {
     "wp:category_nicename": nicename,
     "wp:category_parent": parent,
     "wp:cat_name": name,
+    ...args
   }) {
     this.#category = {
       id,
@@ -14,6 +15,7 @@ module.exports = class Category {
       parent,
       name,
     };
+    assert.deepStrictEqual(args, {}, "Should not be any remaining objects");
   }
 
   get id() {
