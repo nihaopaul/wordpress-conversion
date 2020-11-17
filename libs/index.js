@@ -1,6 +1,7 @@
+"use strict";
 module.exports = ({ rss }) => {
   const data = rss.channel;
-  console.log({ rss });
+  // console.log({ rss });
   const title = require("./title")(data);
   const link = require("./link")(data);
   const description = require("./description")(data);
@@ -13,6 +14,9 @@ module.exports = ({ rss }) => {
   const categories = require("./categories")(data);
   const tags = require("./tags")(data);
   const term = require("./terms")(data);
+  const generator = require("./generator")(data);
+  const icon = require("./icon")(data);
+  const items = require("./items")(data);
 
   return {
     title,
@@ -27,5 +31,8 @@ module.exports = ({ rss }) => {
     categories,
     tags,
     term,
+    generator,
+    icon,
+    items,
   };
 };
