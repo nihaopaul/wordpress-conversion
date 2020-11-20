@@ -27,20 +27,20 @@ base_blog_url: String
 generator: String
 icon: Object
 
-## Arrays to iterate over
+## Arrays
 
-### authors: Array[Authors]
+### authors: Authors Array[]
 
-### attachments: Array[Attachments]
+### attachments: Attachments Array[]
 
-### categories: Array[Categories]
+### categories: Categories Array[]
 
-### nav_menu_items: Array[MenuItems]
+### nav_menu_items: MenuItems Array[]
 
-### pages: Array[Pages]
+### pages: Pages Array[]
 
-### posts: Array[Posts]
+### posts: Posts Array[]
 
-### tags: Array[Tags]
+### tags: Tags Array[]
 
-### terms: Array[Terms]
+### terms: Terms Array[]
