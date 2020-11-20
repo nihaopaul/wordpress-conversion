@@ -1,4 +1,5 @@
 const ItemInterface = require("./interface.item");
+const Comments = require("./comments");
 const assert = require("assert").strict;
 const XMLTOJSON = require("./utils/xml-to-json");
 
@@ -24,5 +25,8 @@ module.exports = class PostInterface extends ItemInterface {
     // assert(this.data.password._cdata, "Cannot find password");
     const { _cdata } = this.data.password;
     return _cdata || false;
+  }
+  get comments() {
+    return new Comments(this.data.comments);
   }
 };

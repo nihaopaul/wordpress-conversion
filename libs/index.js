@@ -19,23 +19,23 @@ module.exports = (XML) => {
   const authors = require("./authors")(data);
   const categories = require("./categories")(data);
   const tags = require("./tags")(data);
-  const term = require("./terms")(data);
+  const terms = require("./terms")(data);
   const generator = require("./generator")(data);
   const icon = require("./icon")(data);
-  const items = require("./items")(data);
+  const _items = require("./items")(data);
 
   // cached based on items
   const attachments = () =>
-    items().filter((item) => item.type === "attachment");
+    _items().filter((item) => item.type === "attachment");
 
   const posts = () => {
-    return items().filter((item) => item.type === "post");
+    return _items().filter((item) => item.type === "post");
   };
 
   const nav_menu_items = () =>
-    items().filter((item) => item.type === "nav_menu_item");
+    _items().filter((item) => item.type === "nav_menu_item");
 
-  const pages = () => items().filter((item) => item.type === "page");
+  const pages = () => _items().filter((item) => item.type === "page");
 
   return {
     title,
@@ -49,10 +49,10 @@ module.exports = (XML) => {
     authors,
     categories,
     tags,
-    term,
+    terms,
     generator,
     icon,
-    items,
+    _items,
     // utilities cached from items
     attachments,
     posts,

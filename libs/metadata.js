@@ -3,9 +3,9 @@ const assert = require("assert");
 module.exports = class Metadata {
   constructor(item) {
     assert(item, "No Object found");
-    console.log("something", item);
     const type = Array.isArray(item) ? "array" : "object";
-    return [this[`_type_${type}`](item)].flat();
+
+    return [this[`_type_${type}`](item)].flat().filter((item) => item);
   }
 
   _type_array(array) {

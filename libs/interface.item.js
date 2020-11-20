@@ -1,5 +1,6 @@
 const assert = require("assert").strict;
 const Metadata = require("./metadata");
+
 module.exports = class ItemInterface {
   #data;
   constructor(args) {
@@ -115,6 +116,7 @@ module.exports = class ItemInterface {
     assert(this.data.parent._text, "Cannot find parent");
     return Number(this.data.parent._text);
   }
+
   get order() {
     assert(this.data.order._text, "Cannot find order");
     return Number(this.data.order._text);
@@ -129,5 +131,4 @@ module.exports = class ItemInterface {
     assert(this.data.metadata, "Cannot find metadata");
     return new Metadata(this.data.metadata);
   }
-  get comments() {}
 };
